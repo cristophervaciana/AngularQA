@@ -51,45 +51,45 @@ https://www.postgresql.org/download/
 # correr el proyecto en modo normal
 ng serve
 
-#agregando modulo para mostrar la informacion de testeo
+# agregando modulo para mostrar la informacion de testeo
 npm i karma-spec-reporter --save-dev
 
 
 npm install -g angular-cli-ghpages
 ## Instrucciones de desarrollo
-#crear una carpeta para el proyecto
-#crear una carpeta para guardar el backend de la aplicacion 
-#ingresar en la carpeta de backend y generar el archivo package.json
+crear una carpeta para el proyecto
+crear una carpeta para guardar el backend de la aplicacion 
+ingresar en la carpeta de backend y generar el archivo package.json
 npm init -y
-#instalar los modulos para manejar el servidor
+# instalar los modulos para manejar el servidor
 express  //para controlar los servicios de la rest api
 morgan  //monitorear los movimientos hechos en tiempo real del servidor
 promise-pg //modulo para el control de bases postgresql
 cors // para poder utilizar multiples conexiones a servidores angular-nodejs
 npm i express morgan promise-pg cors
-#instalar typescript(por si no esta instalado)
+# instalar typescript(por si no esta instalado)
 npm i -g typescript
-#crear el archivo de configuracion de typescript tsconfig.json
+# crear el archivo de configuracion de typescript tsconfig.json
 tsc --init
-# cambiar el target en el archivo tsconfig.json por es2018,la version mas reciente de typescript que utiliza angular
-#descomentar la opcion outDir y escribir "./build" //para guardar el archivo de salida cuando se compila el codigo
+cambiar el target en el archivo tsconfig.json por es2018,la version mas reciente de typescript que utiliza angular
+descomentar la opcion outDir y escribir "./build" //para guardar el archivo de salida cuando se compila el codigo
 # para testear el codigo
 tsc // compila el ts y lo pasa a js
-#probando el codigo generado
+# probando el codigo generado
 node build/index.js
-#automatizar el proceso de compilado
+# automatizar el proceso de compilado
 nos vamos al archivo package.json y en el atributo scripts ingresamos un comando llamado "build":"tsc -w"
-#probando el comando
+# probando el comando
 npm run build
-#automatizar el proceso de ejecucion
+# automatizar el proceso de ejecucion
 nodemon //modulo para la ejecucion en espera del archivo js
 npm i nodemon -D
 luego se agrega otro comando con el nombre "dev":"nodemon build/index.js"
 con esto tendriamos un comando para la vigilancia de compilacion y otra de ejecucion de los cambios hechos
 npm run dev
-#instalando los tipos para que typescript los reconozca
+# instalando los tipos para que typescript los reconozca
 npm i @types/express -D
-#instalar las dependencia de tipo de morgan y cors
+# instalar las dependencia de tipo de morgan y cors
 npm i @types/morgan @types/cors
 
 
