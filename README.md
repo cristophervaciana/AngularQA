@@ -50,7 +50,8 @@ para que las dependencias del proyecto se instalen
 
 # correr el proyecto en modo normal
 ng serve
-
+# correr el proyecto en modo de testeo
+ng test
 # agregando modulo para mostrar la informacion de testeo
 npm i karma-spec-reporter --save-dev
 # modulo para hacer el deploy del proyecto
