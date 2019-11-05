@@ -1,0 +1,33 @@
+<div class="col-md-4 offset-md-2">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <input type="text" name="nombre" [(ngModel)]="alimento.nombre"  class="form-control" placeholder="Nombre del Producto">
+                </div>
+                <div class="form-group">
+                    <input type="url" name="foto" [(ngModel)]="alimento.foto" class="form-control" placeholder="Foto del Producto" >
+                </div> 
+                <div class="form-group">
+                        <input type="number" [(ngModel)]="alimento.cantidad" name="cantidad" class="form-control" placeholder="Cantidad de Producto" >
+                    </div>                 
+                <div class="form-group">
+                    <input type="date" [(ngModel)]="alimento.fechacaducidad" name="fechaCaducidad" class="form-control"  placeholder="Fecha de Caducidad">
+                </div> 
+                <button class="btn btn-success btn-block" (click)="guardarProducto()">
+                    Guardar
+                </button>                           
+            </form>
+        </div>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="card card-body text-center">
+        <h3>
+            {{alimento.nombre == '' ? 'Nombre Producto' : alimento.nombre}} 
+        </h3>
+        <img [src]="alimento.foto == '' ? '/assets/imageDefault.png' : alimento.foto" class="card-img-top">
+        <p>Cantidad: {{alimento.cantidad == '' ? 'Cantidad Producto' : alimento.cantidad}}</p>
+        <p>Vencimiento: {{alimento.fechacaducidad | date:'yyyy-MM-dd' }}</p>
+    </div>
+</div>
